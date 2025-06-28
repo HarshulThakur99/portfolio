@@ -2,7 +2,7 @@
   "name": "portfolio",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://hitesharma.github.io/portfolio",
+  "homepage": "https://github.com/HarshulThakur99/portfolio.git",
   "type": "module",
   "scripts": {
     "dev": "vite",

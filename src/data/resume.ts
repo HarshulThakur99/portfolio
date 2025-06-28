@@ -120,4 +120,53 @@ export const resumeData = {
       ],
     },
   ],
+  certifications: [
+    {
+      name: "AWS Certified AI Practitioner",
+      issuer: "AWS",
+      date: "",
+      link: "https://www.credly.com/badges/d8eee366-d5d5-46da-931e-4f6c0f38e31a/public_url"
+    },
+    {
+      name: "AWS Generative AI Innovation Center Partner Alliance Innovation Program",
+      issuer: "AWS",
+      date: "",
+    },
+    {
+      name: "DeepLearning.AI TensorFlow Developer Professional Certificate",
+      issuer: "DeepLearning.AI",
+      date: "",
+      link: "https://coursera.org/share/56d58de8801203fad04e9903b904366f"
+    },
+    {
+      name: "Natural Language Processing in TensorFlow",
+      issuer: "DeepLearning.AI",
+      date: "",
+      link: "https://coursera.org/share/6dcb9f222094302c367a991dee322670"
+    },
+    {
+      name: "Applied Machine Learning using Python",
+      issuer: "University of Michigan",
+      date: "",
+      link: "https://coursera.org/share/a3e3ac61682a78043d65013a31258c0d"
+    },
+    {
+      name: "Introduction to Data Science in Python",
+      issuer: "University of Michigan",
+      date: "",
+      link: "https://coursera.org/share/e76a8e25a7c05d54868784e32e67af5a"
+    },
+    {
+      name: "AWS Fundamentals: Going Cloud-Native",
+      issuer: "AWS",
+      date: "",
+      link: "https://coursera.org/share/642fd3af4fd557049ff4a07fe67dc518"
+    },
+    {
+      name: "Nanodegree in Big Data Foundations",
+      issuer: "Udacity",
+      date: "",
+      link: "https://confirm.udacity.com/V67U3GES"
+    }
+  ],
 };

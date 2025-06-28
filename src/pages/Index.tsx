@@ -1,10 +1,10 @@
-
 import Experience from "@/components/portfolio/Experience";
 import Hero from "@/components/portfolio/Hero";
 import Skills from "@/components/portfolio/Skills";
 import Footer from "@/components/portfolio/Footer";
 import FloatingNav from "@/components/portfolio/FloatingNav";
 import Bio from "@/components/portfolio/Bio";
+import Certifications from "@/components/portfolio/Certifications";
 
 const Index = () => {
   return (
@@ -15,6 +15,7 @@ const Index = () => {
         <Bio />
         <Experience />
         <Skills />
+        <Certifications />
       </main>
       <Footer />
     </div>
