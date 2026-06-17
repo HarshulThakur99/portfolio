@@ -1,122 +1,201 @@
 export const resumeData = {
   name: "Harshul Thakur",
-  title: "Data Scientist",
-  summary: `Results-driven Senior Machine Learning Engineer with 5 years of experience architecting, developing, and deploying scalable AI/ML solutions. I specialize in Large Language Models (LLMs), Generative AI, and MLOps on cloud platforms like Azure and AWS. I enjoy translating complex business challenges into impactful technical solutions, and I thrive on leading projects from ideation to production. My expertise spans Python, TensorFlow, PyTorch, PySpark, and a range of ML frameworks, with a strong focus on building systems that deliver real business value.`,
+  title: "AI Architect",
+  summary: `Results-driven AI Architect with 6+ years designing and shipping production ML systems and LLM/Agentic AI platforms at scale. Track record spans classical ML (forecasting, anomaly detection, time-series) through modern GenAI — RAG pipelines, MCP-based multi-agent systems, graph memory architectures, and LLM fine-tuning (SFT/DPO) — all deployed end-to-end on AWS (Bedrock, OpenSearch) and Azure (AKS, AML, CosmosDB). Adept at owning full delivery: from solution architecture and ML pipeline design to CI/CD, real-time inference, and cloud-native security. Expert in Python, PyTorch, LangGraph, and PySpark.`,
   contact: {
     email: "harshulthakur99@gmail.com",
     linkedin: "https://www.linkedin.com/in/harshul-thakur/",
   },
   experience: [
     {
-      company: "Quantiphi",
-      title: "Sr. ML Engineer",
+      company: "Quantiphi Inc.",
+      title: "AI/ML Architect",
       period: "February 2024 – Present",
-      description: [
-        "Developed a Generative AI Digital Driver Assistant using Azure OpenAI Service (GPT-4o) and Azure Cognitive Services (Speech-to-Text) to enhance driver interaction.",
-        "Engineered the system to process natural language queries, generate SQL for data retrieval, and provide contextually relevant answers from documents/policies using Retrieval-Augmented Generation (RAG).",
-        "Fine-tuned GPT-4o on a curated dataset of 10,000+ domain-specific driver interactions and company policies to improve understanding of industry jargon and common queries.",
-        "Established a CI/CD pipeline for deploying updated fine-tuned models, including automated testing against a benchmark dataset of driver queries to ensure consistent performance and prevent regressions.",
-        "Designed a feedback mechanism allowing drivers to rate responses, with this data periodically used to refine prompts and identify areas for further model fine-tuning.",
-        "Architected and developed an ML model to predict vehicle lease renewals within a 90-day window, achieving 85% recall and 90% precision, resulting in a 20% increase in customer retention.",
-        "Engineered features identifying 10 key predictors, improving model performance by 30%.",
-        "Led the migration of the ML pipeline from AWS to Azure, utilizing Azure Machine Learning Studio and Azure Blob Storage.",
-        "Deployed the model on Azure ML endpoints for real-time inference and batch processing, reducing operational bottlenecks by 40%.",
-        "Developed a robust CI/CD pipeline using Azure DevOps, automating code integration, unit/integration testing, model validation, and staged deployment (Dev, UAT, Prod) to Azure ML.",
-        "Integrated automated triggers for model retraining based on performance degradation alerts or significant data drift, ensuring sustained model accuracy.",
+      projects: [
+        {
+          name: "Agentic AI Platform (Internal Product)",
+          bullets: [
+            "Architected a no-code/low-code platform enabling rapid development and deployment of autonomous AI agents for enterprise business workflows using LangGraph and CrewAI for multi-agent orchestration.",
+            "Designed modular agent orchestration architecture supporting composition of multiple AI agents with shared contextual memory, tool routing, and dynamic task planning.",
+            "Integrated AWS Bedrock foundation models (Claude, Titan) and implemented scalable agent pipelines following MCP and A2A interoperability protocols.",
+            "Built REST APIs to expose agent capabilities to downstream applications, enabling seamless integration with enterprise systems and data sources.",
+            "Enabled rapid deployment of AI-driven workflows through dynamic configuration of agents, tools, and data sources — reducing time-to-production for new use cases by ~60%.",
+          ],
+        },
+        {
+          name: "Generative AI Digital Driver Assistant",
+          bullets: [
+            "Built a production-grade MCP client+server agentic platform for enterprise fleet management with real-time SSE streaming, GraphMemo graph memory, and a DB-driven dynamic tool registry — deployed on Azure (AKS, CosmosDB, Redis, Azure SQL).",
+            "Engineered a per-intent vector retrieval router seeding each tool as multiple CosmosDB phrase-nodes; improved semantic tool-match scores from ~0.30 → 0.65–0.90 and cut routing latency from ~2–3 s to <400 ms.",
+            "Designed a custom graph memory layer (GraphMemo) with Tool Nodes (vector-embedded API descriptions), Fact Nodes (stateful entities with field-change history), and Relationship Nodes; implemented Redis hot-cache (TTL-tiered) + CosmosDB cold-storage with automatic LLM-driven conversation summarization replacing naive truncation.",
+            "Implemented a 4-tier parallel safety pipeline — Azure Content Safety pre-flight (~50–100 ms) + embedding intent classifier at 86.8% accuracy / 150 ms + role×intent permission matrix + LLM business-rules — running before every tool execution.",
+            "Achieved zero-code tool onboarding via an Azure SQL-backed dynamic tool registry with atomic cache refresh ordering (MCP → RetrievalRouter → GraphMemo → Redis) and session-scoped context injection; customer_id enforced non-overridable by LLM design.",
+            "Integrated Azure Key Vault (DefaultAzureCredential), 5-tier RBAC, hot-reloadable guardrail configs, and Kubernetes-native health/readiness probes for production resilience.",
+          ],
+        },
+        {
+          name: "Vehicle Lease Renewal Forecasting",
+          bullets: [
+            "Designed and deployed a scalable ML system on Azure predicting vehicle lease renewals, achieving 85% recall and 90% precision — improving operational efficiency by 40%.",
+            "Built distributed feature engineering pipelines using PySpark; deployed real-time inference on Azure Kubernetes Service with event-driven ingestion via Azure Event Hub and Event Grid.",
+          ],
+        },
       ],
     },
     {
       company: "Grazitti Interactive",
       title: "Data Scientist",
       period: "August 2021 – February 2024",
-      description: [
-        "Engineered and fine-tuned LLMs using Retrieval Augmented Generation (RAG) by integrating with AWS OpenSearch vector database populated with financial reports and medical research papers. Automated ingestion pipeline from Amazon S3 kept the knowledge base dynamically updated.",
-        "Enhanced Whisper model performance via tailored transfer learning on a domain-specific audio dataset, unfreezing select layers and fine-tuning with a custom loss function for accent robustness. Achieved 70x inference speedup on CPU by quantizing the model and optimizing the execution graph with TensorFlow ONNX Runtime.",
-        "Utilized BERT-based scoring to assess factual consistency of LLM outputs against source documents and employed a cross-encoder architecture to re-rank responses, reducing model hallucination by 40%.",
-        "Presented the RAG LLM pipeline at the 2023 Intel Vision Demo, attracting attention from Intel's CEO for its impact on decision-making with LLMs.",
-        "Developed a model risk management solution for financial anomaly detection, achieving a 25% increase in recall by applying reinforcement learning principles to refine predictions and enhance decision-making.",
-        "Led a tax data project using advanced pre-processing and Holt-Winters exponential smoothing for improved time series forecasting accuracy.",
-        "Developed a human pose detection library integrating Ultralytics YOLOv5 for accurate human detection across varied images.",
+      projects: [
+        {
+          name: "LLM Decision Systems (Intel Vision 2023)",
+          bullets: [
+            "Built LLM-powered executive decision support prototypes demonstrated at Intel Vision 2023.",
+            "Enabled natural language querying over enterprise data sources improving information access and decision speed.",
+          ],
+        },
+        {
+          name: "Financial Anomaly Detection",
+          bullets: [
+            "Designed machine learning models for anomaly detection within a model risk governance framework.",
+            "Implemented validation pipelines, feedback loops, and monitoring metrics aligned with compliance standards.",
+          ],
+        },
+        {
+          name: "RAG-based Financial Knowledge System",
+          bullets: [
+            "Implemented a retrieval augmented generation system using AWS OpenSearch vector database.",
+            "Built automated document ingestion pipelines using Amazon S3 enabling continuously updated knowledge bases.",
+          ],
+        },
+        {
+          name: "Speech Model Optimization",
+          bullets: [
+            "Improved Whisper speech model performance through transfer learning and model quantization.",
+            "Reduced model size and enabled real-time inference on resource-constrained devices with 70x CPU speed improvement.",
+          ],
+        },
+        {
+          name: "LLM Evaluation Framework",
+          bullets: [
+            "Built BERT-based evaluation pipelines to measure factual consistency of LLM outputs.",
+            "Implemented cross-encoder ranking models to reduce hallucinations by 40%.",
+          ],
+        },
+        {
+          name: "Forecasting Systems",
+          bullets: [
+            "Built time series forecasting pipelines using Holt-Winters exponential smoothing for tax revenue forecasting.",
+          ],
+        },
       ],
     },
     {
       company: "Volvo Eicher Commercial Vehicles Ltd.",
       title: "Data Science Consultant",
       period: "June 2020 – August 2021",
-      description: [
-        "Led a project to predict the remaining operational lifespan (RUL) of industrial assets, conducting feature engineering and model selection to develop accurate predictions using Time Series Analysis and Deep Learning.",
-        "Created a Python automation script that transformed large datasets into professional presentations, saving 32 hours weekly and reducing company costs by $20,000 annually."
+      projects: [
+        {
+          name: "Predictive Maintenance & RUL Modeling",
+          bullets: [
+            "Developed machine learning models predicting remaining useful life of industrial components using time series analysis and deep learning.",
+          ],
+        },
+        {
+          name: "Automated Data Intelligence Pipeline",
+          bullets: [
+            "Built Python automation pipelines transforming raw datasets into automated reporting dashboards.",
+            "Reduced manual analysis time by 32 hours per week and delivered ~$20K annual operational savings.",
+          ],
+        },
       ],
     },
   ],
   skills: [
     {
-      icon: "🧠",
-      category: "AI/ML",
+      icon: "🤖",
+      category: "Agentic AI & Frameworks",
       tools: [
-        { name: "Artificial Intelligence" },
-        { name: "Computer Vision" },
-        { name: "Data Engineering" },
-        { name: "Deep Learning" },
-        { name: "Demand Forecasting" },
-        { name: "Generative AI" },
-        { name: "Image Recognition" },
+        { name: "LangGraph", slug: "langgraph" },
+        { name: "LangChain", slug: "langchain" },
+        { name: "CrewAI" },
+        { name: "AWS Bedrock Agents" },
+        { name: "Azure AI Foundry" },
+        { name: "MCP Protocol" },
+        { name: "A2A Protocol" },
+        { name: "Autonomous Agents" },
+        { name: "Multi-Agent Orchestration" },
+      ],
+    },
+    {
+      icon: "🧠",
+      category: "LLM & GenAI",
+      tools: [
         { name: "Large Language Models" },
-        { name: "Machine Learning" },
-        { name: "MLOps" },
-        { name: "Natural Language Processing" },
-        { name: "PySpark" },
+        { name: "Prompt Engineering" },
         { name: "Retrieval-Augmented Generation" },
-        { name: "System Design" },
-        { name: "Tableau" },
-        { name: "Time Series Analysis" }
+        { name: "Fine-Tuning (SFT/DPO)" },
+        { name: "Hallucination Reduction" },
+        { name: "LLM Evaluation" },
+        { name: "Responsible AI" },
       ],
     },
     {
       icon: "💻",
-      category: "What I Code In",
+      category: "Languages & APIs",
       tools: [
         { name: "Python", slug: "python" },
-      ],
-    },
-    {
-      icon: "🗃️",
-      category: "Data & Storage",
-      tools: [
-        { name: "MongoDB", slug: "mongodb" },
-        { name: "MySQL", slug: "mysql" },
-        { name: "Redis", slug: "redis" },
-      ],
-    },
-    {
-      icon: "🛠️",
-      category: "Infrastructure & Tooling",
-      tools: [
-        { name: "Kubernetes", slug: "kubernetes" },
-        { name: "Docker", slug: "docker" },
-        { name: "Grafana", slug: "grafana" },
-        { name: "Git", slug: "git" },
-        { name: "Kafka", slug: "apachekafka" },
+        { name: "SQL" },
+        { name: "FastAPI", slug: "fastapi" },
+        { name: "PySpark", slug: "apachespark" },
+        { name: "OpenAI API" },
       ],
     },
     {
       icon: "☁️",
-      category: "Cloud Platforms",
+      category: "Cloud & Infrastructure",
       tools: [
-        { name: "AWS" },
-        { name: "AWS SageMaker" },
-        { name: "AWS Lambda" },
-        { name: "AWS OpenSearch" },
+        { name: "AWS Bedrock" },
         { name: "AWS S3" },
-        { name: "Azure" },
-        { name: "Azure OpenAI" },
-        { name: "Azure Cognitive Services" },
-        { name: "Azure Machine Learning" },
-        { name: "Azure DevOps" },
-        { name: "GCP" },
+        { name: "AWS OpenSearch" },
+        { name: "Azure AKS" },
+        { name: "Azure CosmosDB" },
+        { name: "Azure Event Hub" },
+        { name: "Azure Event Grid" },
+        { name: "Azure AI Foundry" },
         { name: "GCP Vertex AI" },
-        { name: "GCP BigQuery" },
-        { name: "GCP Cloud Functions" },
+        { name: "Kubernetes", slug: "kubernetes" },
+        { name: "Docker", slug: "docker" },
+        { name: "Azure DevOps", slug: "azuredevops" },
+        { name: "GitHub Actions", slug: "githubactions" },
+      ],
+    },
+    {
+      icon: "📊",
+      category: "ML & Data",
+      tools: [
+        { name: "Deep Learning" },
+        { name: "Transformers" },
+        { name: "MLOps" },
+        { name: "Time Series Analysis" },
+        { name: "Demand Forecasting" },
+        { name: "Computer Vision" },
+        { name: "Statistical Modelling" },
+        { name: "MongoDB", slug: "mongodb" },
+        { name: "Redis", slug: "redis" },
+        { name: "Apache Kafka", slug: "apachekafka" },
+        { name: "Tableau", slug: "tableau" },
+      ],
+    },
+    {
+      icon: "💰",
+      category: "Financial Domain",
+      tools: [
+        { name: "Financial Anomaly Detection" },
+        { name: "Model Risk Governance" },
+        { name: "Regulatory Compliance Pipelines" },
+        { name: "Financial Forecasting" },
+        { name: "Risk Management Frameworks" },
       ],
     },
   ],
@@ -126,6 +205,11 @@ export const resumeData = {
       issuer: "AWS",
       date: "",
       link: "https://www.credly.com/badges/d8eee366-d5d5-46da-931e-4f6c0f38e31a/public_url"
+    },
+    {
+      name: "Ultimate Agentic AI Course on AWS: Bedrock, Crew AI and MCP",
+      issuer: "AWS",
+      date: "",
     },
     {
       name: "AWS Generative AI Innovation Center Partner Alliance Innovation Program",

@@ -8,7 +8,7 @@
 
 This repository contains the source code for my personal developer portfolio, showcasing my skills, projects, and professional experience.
 
-**Live Demo:** [**hitesharma.github.io/portfolio**](https://hitesharma.github.io/portfolio)
+**Live Demo:** [**HarshulThakur99.github.io/portfolio**](https://harshulthakur99.github.io/portfolio/)
 
 ---
 
@@ -43,7 +43,7 @@ The only requirement is having **Node.js** and **npm** installed. It is recommen
 
 1.  **Clone the repository**
     ```sh
-    git clone [https://github.com/hitesharma/portfolio.git](https://github.com/hitesharma/portfolio.git)
+    git clone [https://github.com/HarshulThakur99/portfolio.git](https://github.com/HarshulThakur99/portfolio.git)
     ```
 
 2.  **Navigate to the project directory**
@@ -90,7 +90,7 @@ This command first runs the `predeploy` script (`npm run build`) to create a pro
 
 ## 🤝 Contributing
 
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/hitesharma/portfolio/issues).
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/HarshulThakur99/portfolio/issues).
 
 You can also contribute by:
 

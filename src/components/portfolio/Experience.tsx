@@ -58,12 +58,19 @@ const Experience = () => {
           {/* Details */}
           <div className="flex-1">
             <div key={activeIndex} className="animate-fade-in-up">
-              <h3 className="text-2xl font-bold text-foreground mb-4">{selectedJob.company}</h3>
-              <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                {selectedJob.description.map((item, i) => (
-                  <li key={i}>{item}</li>
+              <h3 className="text-2xl font-bold text-foreground mb-6">{selectedJob.company}</h3>
+              <div className="space-y-6">
+                {selectedJob.projects.map((project, pi) => (
+                  <div key={pi}>
+                    <h4 className="text-base font-semibold text-accent mb-2">{project.name}</h4>
+                    <ul className="list-disc list-inside space-y-1.5 text-muted-foreground">
+                      {project.bullets.map((item, i) => (
+                        <li key={i}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
           </div>
         </div>
